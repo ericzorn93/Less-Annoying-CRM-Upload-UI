@@ -5,7 +5,7 @@ export function getApiUrl(): string {
 
   switch (process.env.NODE_ENV) {
     case "production":
-      url = "";
+      url = "https://lessannoyinrm-upload-api.herokuapp.com";
       break;
     case "development":
       url = "http://localhost:5000";
@@ -18,7 +18,7 @@ export function getApiUrl(): string {
   return url;
 }
 
-async function uploadFile(file: any): Promise<boolean> {
+export async function uploadFile(file: any): Promise<boolean> {
   const url = getApiUrl();
 
   let uploadedFile: boolean = false;
