@@ -60,7 +60,9 @@ const UploadForm: React.FC = () => {
           action={`${getApiUrl()}/file-upload/add-spreadsheet`}
           headers={{
             Authorization: authToken ? `Bearer ${authToken}` : "",
+            "Keep-Alive": `timeout = 1000000000,max = 100000`,
           }}
+          method="POST"
         >
           <p className="ant-upload-drag-icon">
             <InboxOutlined />
